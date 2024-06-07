@@ -1,0 +1,6 @@
+{
+    "email": "enter_email",
+    "password": "enter_email",
+    "invalid_email": "invalid_email@g.com",
+    "invalid_password": "password"
+}
