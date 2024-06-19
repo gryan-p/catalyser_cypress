@@ -1,6 +1,10 @@
 {
-    "email": "enter_email",
-    "password": "enter_email",
+    "email": "test.catalyser01@gmail.com",
+    "password": "@TestCat01",
+    "google_SSO_email": "developers@catalyser.com",
+    "google_SSO_PW": "g3KqhH8iLSX#",
     "invalid_email": "invalid_email@g.com",
-    "invalid_password": "password"
+    "invalid_password": "password",
+    "samlEmail": "gryan@admincatalyser.onmicrosoft.com",
+    "samlPassword": "@Catalysertest012"
 }

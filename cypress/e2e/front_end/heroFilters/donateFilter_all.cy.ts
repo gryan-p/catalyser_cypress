@@ -6,7 +6,7 @@ describe('Verify that user can filter events with different combination', () => 
         cy.fixture("user").then((data)=>{
             cy.login(data.email, data.password); 
         })
-        cy.visit('/portal')
+        // cy.visit('/')
 
         /* Check landing page */ 
         cy.get('span').contains('Let’s make a').should('exist')
