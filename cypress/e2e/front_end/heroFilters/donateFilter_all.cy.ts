@@ -42,9 +42,9 @@ describe('Verify that user can filter events with different combination', () => 
         cy.get('li.splide__slide > div > span').contains('LGBTQ').should('exist')
 
        /* Temporary Verification - need to change once we will be able to add events*/
-       cy.get('a > span.mui-11oee64').contains('Biggest Morning Tea V3').should('exist')
        cy.get('a > span.mui-11oee64').contains('Plant Trees - Australia - March 5 - Advocacy').should('exist')
        cy.get('a > span.mui-11oee64').contains('Abnormal immunolog findings in specimens from resp org/thrx').should('exist')
+       cy.get('a > span.mui-11oee64').contains('Donate to grow native forests and climate hope - April 22 v1').should('exist')
         
     })
 
