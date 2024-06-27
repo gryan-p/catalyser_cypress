@@ -72,7 +72,7 @@ describe('Verify that user can search by Donation Type', () => {
         
         /* Temporary Verification - need to change once we will be able to add events*/
         cy.get('a > span.mui-11oee64').contains('Test - PH Jan 22').should('exist')
-        cy.get('a > span.mui-11oee64').contains('Biggest Morning Tea PH - PH Jan 22').should('exist')
+        cy.get('a > span.mui-11oee64').contains('Jo-Anne Fundraiser Test June 24').should('exist')
 
         
     })
