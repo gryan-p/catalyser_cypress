@@ -214,8 +214,6 @@ describe('Verify Active Teams page - Public', () => {
                 throw new Error("test fails here")
             }
         })
-
-        
     })
     
 })

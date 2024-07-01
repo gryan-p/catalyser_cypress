@@ -74,26 +74,36 @@ describe('Add a New Featured Collection under the Homepage', () => {
                 cy.get('label > span').contains('For Automation Test').click()  
             })
 
-        //Select start date
-        cy.log('Select visibility start date')
-        cy.get('label')
+        
+        const d = new Date();
+        let day = d.getDay();
+        
+        if(day != 1){
+            //Select start date
+            cy.log('Select visibility start date')
+            cy.get('label')
             .contains('Visibility start date')
             .parent()
             .within(() => {
                 cy.get('button.mui-fe5dlg > svg').click()
             })
-        cy.get('button[name="day"]').contains(/^1$/).click()
+            cy.get('button[name="day"]').contains(/^1$/).click()
+
+        }
         cy.get('input#basic-button').eq(0).invoke('attr', 'value').as('startdate') // get the set date that will be used later
 
-        //Select end date
-        cy.log('Select visibility end date')
-        cy.get('label')
-            .contains('Visibility end date')
-            .parent()
-            .within(() => {
-                cy.get('button.mui-fe5dlg > svg').click()
-            })
-        cy.get('button[name="day"]').contains(/^30$/).click()
+        if(day != 28){
+            //Select end date
+            cy.log('Select visibility end date')
+            cy.get('label')
+                .contains('Visibility end date')
+                .parent()
+                .within(() => {
+                    cy.get('button.mui-fe5dlg > svg').click()
+                })
+            cy.get('button[name="day"]').contains(/^28$/).click()
+        }
+
         cy.get('input#basic-button').eq(1).invoke('attr', 'value').as('enddate') // get the set date that will be used later
 
         //Select start time
@@ -129,7 +139,7 @@ describe('Add a New Featured Collection under the Homepage', () => {
         cy.log('Verify there are no errors on page after saving a new featured collection')
         cy.get(add_button).should('exist')
         cy.get(active_button).should('exist')
-        cy.scrollTo(0, 500)
+        // cy.scrollTo(0, 500)
         cy.get('tbody p.mui-1ddigjq').contains(feature_collection_name, { timeout: 5000 }).should('exist')
 
         cy.log('Verify that collection is displayed under respective visibillity tab after saving')

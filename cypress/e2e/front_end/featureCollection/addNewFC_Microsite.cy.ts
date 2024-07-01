@@ -73,26 +73,33 @@ describe('Add a New Featured Collection under the Homepage', () => {
                 cy.get('label > span').contains('For Automation Test').click()  
             })
 
-        //Select start date
-        cy.log('Select visibility start date')
-        cy.get('label')
-            .contains('Visibility start date')
-            .parent()
-            .within(() => {
-                cy.get('button.mui-fe5dlg > svg').click()
-            })
-        cy.get('button[name="day"]').contains(/^5$/).click()
+        const d = new Date();
+        let day = d.getDay();
+            
+        if(day != 5){
+            //Select start date
+            cy.log('Select visibility start date')
+            cy.get('label')
+                .contains('Visibility start date')
+                .parent()
+                .within(() => {
+                    cy.get('button.mui-fe5dlg > svg').click()
+                })
+            cy.get('button[name="day"]').contains(/^5$/).click()
+        }
         cy.get('input#basic-button').eq(0).invoke('attr', 'value').as('startdate') // get the set date that will be used later
-
-        //Select end date
-        cy.log('Select visibility end date')
-        cy.get('label')
-            .contains('Visibility end date')
-            .parent()
-            .within(() => {
-                cy.get('button.mui-fe5dlg > svg').click()
-            })
-        cy.get('button[name="day"]').contains(/^20$/).click()
+     
+        if(day != 20){
+            //Select end date
+            cy.log('Select visibility end date')
+            cy.get('label')
+                .contains('Visibility end date')
+                .parent()
+                .within(() => {
+                    cy.get('button.mui-fe5dlg > svg').click()
+                })
+            cy.get('button[name="day"]').contains(/^20$/).click()
+        }
         cy.get('input#basic-button').eq(1).invoke('attr', 'value').as('enddate') // get the set date that will be used later
 
         //Select start time

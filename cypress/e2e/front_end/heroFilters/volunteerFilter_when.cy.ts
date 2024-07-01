@@ -44,7 +44,7 @@ describe('Verify that user can search by date', () => {
         cy.get('input[placeholder="From Date | To Date"]').click()
 
         cy.get('.w-full >div >div > div > button').eq(0).click()
-        cy.get('button').contains('June').click().wait(2000)
+        cy.get('button').contains('Jun').click().wait(2000)
         cy.get('.w-full >div >div > div > button').eq(1).click()
         cy.get('path[stroke-linecap="round"]').eq(1).click()
         cy.get('button').contains('2023').click().wait(2000)
