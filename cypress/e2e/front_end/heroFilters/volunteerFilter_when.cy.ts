@@ -6,7 +6,7 @@ describe('Verify that user can search by date', () => {
         cy.fixture("user").then((data)=>{
             cy.login(data.email, data.password); 
         })
-        // cy.visit('/portal')
+        cy.visit('/portal/feed')
         cy.viewport(1536, 960)
 
         /* Check landing page */ 

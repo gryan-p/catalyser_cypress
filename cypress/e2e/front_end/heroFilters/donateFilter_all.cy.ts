@@ -6,7 +6,7 @@ describe('Verify that user can filter events with different combination', () => 
         cy.fixture("user").then((data)=>{
             cy.login(data.email, data.password); 
         })
-        // cy.visit('/')
+        cy.visit('/portal/feed')
 
         /* Check landing page */ 
         cy.get('span').contains('Let’s make a').should('exist')
@@ -131,7 +131,7 @@ describe('Verify that user can filter events with different combination', () => 
         cy.get('li.splide__slide > div > span').contains('LGBTQ').should('exist')
 
        /* Temporary Verification - need to change once we will be able to add events*/
-       cy.get('a > span.mui-11oee64').contains('Biggest Morning Tea PH - PH Jan 22').should('exist')
+       cy.get('a > span.mui-11oee64').contains('Test - PH Jan 22').should('exist')
         
     })
     

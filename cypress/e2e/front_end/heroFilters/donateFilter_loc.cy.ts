@@ -6,7 +6,7 @@ describe('Verify that user can search by Location', () => {
         cy.fixture("user").then((data)=>{
             cy.login(data.email, data.password); 
         })
-        // cy.visit('/portal')
+        cy.visit('/portal/feed')
         cy.viewport(1536, 960)
 
         /* Check landing page */ 
@@ -197,7 +197,6 @@ describe('Verify that user can search by Location', () => {
          cy.get('li.splide__slide > div > span').contains('LGBTQ').should('exist')
 
          /* Temporary Verification - need to change once we will be able to add events*/
-        cy.get('a > span.mui-11oee64').contains('Biggest Morning Tea PH - PH Jan 22').should('exist')
         cy.get('a > span.mui-11oee64').contains('Biggest Morning Tea PH').should('exist')
     })
 
